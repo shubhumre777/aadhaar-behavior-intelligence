@@ -163,6 +163,7 @@ Live App:
 ---
 
 📁 Project Structure
+
 aadhaar-behavior-intelligence/
 │
 ├── app/
@@ -199,4 +200,5 @@ It bridges **raw public infrastructure data** with **AI-driven decision support 
 ## 📜 License
 
 This project is developed for educational and hackathon purposes.
+
 
