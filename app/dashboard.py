@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
+import os
 
 st.set_page_config(page_title="Aadhaar Behaviour Intelligence", layout="wide")
 
@@ -9,11 +10,15 @@ st.title("🧠 Aadhaar Biometric Behaviour Intelligence System")
 
 # Load data
 
-monthly_df = pd.read_csv("../outputs/monthly_behavior.csv")
-anomalies_df = pd.read_csv("../outputs/anomalies.csv")
-risk_df = pd.read_csv("../outputs/district_risk.csv")
-state_risk_df = pd.read_csv("../outputs/state_risk.csv")
-coords_df = pd.read_csv("../outputs/state_coordinates.csv")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+OUTPUT_DIR = os.path.join(BASE_DIR, "outputs")
+
+monthly_df = pd.read_csv(os.path.join(OUTPUT_DIR, "monthly_behavior.csv"))
+anomalies_df = pd.read_csv(os.path.join(OUTPUT_DIR, "anomalies.csv"))
+risk_df = pd.read_csv(os.path.join(OUTPUT_DIR, "district_risk.csv"))
+state_risk_df = pd.read_csv(os.path.join(OUTPUT_DIR, "state_risk.csv"))
+coords_df = pd.read_csv(os.path.join(OUTPUT_DIR, "state_coordinates.csv"))
+
 map_points_df = state_risk_df.merge(coords_df, on="state", how="left")
 
 
