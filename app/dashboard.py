@@ -24,6 +24,8 @@ map_points_df = state_risk_df.merge(coords_df, on="state", how="left")
 
 st.success("Data loaded successfully")
 
+button = st.button("Show analysis :")
+
 # Sidebar filters
 
 st.sidebar.header("Filters") # name showing at the slidebar .
@@ -38,87 +40,120 @@ selected_state = st.sidebar.selectbox("Select State", ["All"] + all_states)
 
 filtered_anomalies = anomalies_df.copy()
 
+# in slidebar month filter will be visible .
+
 if selected_month != "All":
     filtered_anomalies = filtered_anomalies[filtered_anomalies['month'] == selected_month]
 
 if selected_state != "All":
     filtered_anomalies = filtered_anomalies[filtered_anomalies['state'] == selected_state]
 
-
-# Section 1: Monthly trend (India)
-
-st.header("📈 Monthly Update Trends (India)")
-
-monthly_totals = (
-    monthly_df
-    .groupby('month')[[
-        'demo_age_5_17','demo_age_17_',
-        'bio_age_5_17','bio_age_17_'
-    ]]
-    .sum()
-)
-
-st.line_chart(monthly_totals)
-
-# Section 2: Anomaly trend
-
-st.header("🚨 Anomaly Trend Over Time")
-
-anomaly_counts = anomalies_df.groupby('month').size()
-
-fig, ax = plt.subplots(figsize=(10,4))
-anomaly_counts.plot(kind='bar', ax=ax)
-ax.set_title("Number of abnormal districts per month")
-ax.set_xlabel("Month")
-ax.set_ylabel("Count")
-
-st.pyplot(fig)
+if button : 
 
 
-# Abnormal districts table
-
-st.header("📍 Abnormal Districts (Filtered)")
-
-display_cols = ['month','state','district','bio_total','demo_total','bio_demo_ratio']
-
-table_df = filtered_anomalies[display_cols].sort_values('bio_demo_ratio', ascending=False)
-table_df['bio_demo_ratio'] = table_df['bio_demo_ratio'].round(2)
-
-st.dataframe(table_df, use_container_width=True)
 
 
-# Risk ranking
+    # Section 1: Monthly trend (India)
 
-st.header("⚠️ District Risk Ranking (Overall)")
+    st.header("📈 Monthly Update Trends (India)")
 
-risk_view = risk_df.sort_values('risk_score', ascending=False).copy()
-risk_view['risk_score'] = risk_view['risk_score'].round(2)
+    monthly_totals = (
+        monthly_df
+        .groupby('month')[[
+            'demo_age_5_17','demo_age_17_',
+            'bio_age_5_17','bio_age_17_'
+        ]]
+        .sum()
+    )
 
-st.dataframe(risk_view.head(50), use_container_width=True)
+    st.line_chart(monthly_totals)
+
+    # Section 2: Anomaly trend
+
+    st.header("🚨 Anomaly Trend Over Time")
+
+    anomaly_counts = anomalies_df.groupby('month').size()
+
+    fig, ax = plt.subplots(figsize=(10,4))
+    anomaly_counts.plot(kind='bar', ax=ax)
+    ax.set_title("Number of abnormal districts per month")
+    ax.set_xlabel("Month")
+    ax.set_ylabel("Count")
+
+    st.pyplot(fig)
 
 
-st.header("📍 Biometric Risk Hotspots (Point Map)")
+    # Abnormal districts table
 
-fig = px.scatter_geo(
-    map_points_df,
-    lat="lat",
-    lon="lon",
-    size="risk_score",
-    color="risk_score",
-    hover_name="state",
-    size_max=40,
-    projection="natural earth",
-    title="Aadhaar Biometric Risk Hotspots (State Level)",
-    color_continuous_scale="Reds"
-)
+    st.header("📍 Abnormal Districts (Filtered)")
 
-fig.update_geos(
-    fitbounds="locations",
-    visible=True,
-    showcountries=True,
-    countrycolor="Black"
-)
+    display_cols = ['month','state','district','bio_total','demo_total','bio_demo_ratio']
 
-st.plotly_chart(fig, use_container_width=True)
+    table_df = filtered_anomalies[display_cols].sort_values('bio_demo_ratio', ascending=False)
+    table_df['bio_demo_ratio'] = table_df['bio_demo_ratio'].round(2)
 
+    st.dataframe(table_df, use_container_width=True)
+
+
+    # Risk ranking
+
+    st.header("⚠️ District Risk Ranking (Overall)")
+
+    risk_view = risk_df.sort_values('risk_score', ascending=False).copy()
+    risk_view['risk_score'] = risk_view['risk_score'].round(2)
+
+    st.dataframe(risk_view.head(50), use_container_width=True)
+
+
+    st.header("📍 Biometric Risk Hotspots (Point Map)")
+
+    fig = px.scatter_geo(
+        map_points_df,
+        lat="lat",
+        lon="lon",
+        size="risk_score",
+        color="risk_score",
+        hover_name="state",
+        size_max=40,
+        projection="natural earth",
+        title="Aadhaar Biometric Risk Hotspots (State Level)",
+        color_continuous_scale="Reds"
+    )
+
+    fig.update_geos(
+        fitbounds="locations",
+        visible=True,
+        showcountries=True,
+        countrycolor="Black"
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
+
+
+    st.subheader("📊 Biometric to Demographic Ratio Trend")
+
+    ratio_trend = monthly_df.groupby("month")["bio_demo_ratio"].mean().reset_index()
+
+    fig, ax = plt.subplots(figsize=(12,4))
+    ax.plot(ratio_trend["month"], ratio_trend["bio_demo_ratio"], marker="o")
+    ax.set_title("Average Biometric-to-Demographic Ratio Over Time")
+    ax.set_xlabel("Month")
+    ax.set_ylabel("Ratio")
+
+    st.pyplot(fig)
+
+    st.subheader("🏛️ State-wise Risk Distribution (Top 10)")
+
+    top_states = state_risk_df.sort_values("risk_score", ascending=False).head(10)
+
+    fig, ax = plt.subplots(figsize=(12,5))
+    ax.barh(top_states["state"], top_states["risk_score"])
+    ax.set_title("Top 10 High Risk States")
+
+    st.pyplot(fig)
+    
+    st.subheader("🔝 Districts with Highest Biometric Ratios")
+
+    top_ratio_df = monthly_df.sort_values("bio_demo_ratio", ascending=False).head(20)
+    st.dataframe(top_ratio_df[["month","state","district","bio_demo_ratio"]])
 
