@@ -5,20 +5,21 @@ Live Demo:
 
 ---
 
-## 📌 Problem Statement
+🇮🇳 Aadhaar Behaviour Intelligence Platform
+AI-Powered National Identity Analytics System
+<p align="center"> <img src="https://img.shields.io/badge/AI-Powered-blueviolet"/> <img src="https://img.shields.io/badge/India-UIDAI-orange"/> <img src="https://img.shields.io/badge/Status-Deployed-success"/> <img src="https://img.shields.io/badge/Tech-Streamlit%20%7C%20ML%20%7C%20Forecasting-blue"/> </p> <p align="center"> 🧠 Turning Aadhaar data into National Intelligence <br/> 📊 Detecting anomalies • Forecasting risk • Supporting governance </p>
+🌏 Vision
 
-Unlocking Societal Trends in Aadhaar Enrolment and Updates
+To transform raw Aadhaar update logs into actionable national intelligence that enables proactive governance, infrastructure planning, and improved citizen experience.
 
-Aadhaar systems process millions of enrolments and updates every month. Sudden spikes or unusual biometric activity may indicate:
+India’s digital identity system is the largest in the world. Monitoring it using simple reports is not enough.
 
-- System overload  
-- Policy-driven mass update campaigns  
-- Infrastructure limitations  
-- Security audits or data correction drives  
+This project builds an AI-powered decision support platform for UIDAI.
 
-Manual monitoring at national scale is not feasible.
+🎯 Problem Statement
 
-This project builds an **AI-based behavioural monitoring system** to automatically identify meaningful patterns, trends, anomalies, and predictive indicators to support informed decision-making and system improvements.
+Unlock societal trends in Aadhaar enrolment and updates by identifying meaningful patterns, anomalies, and predictive indicators to support informed decision-making and system improvements.
+
 
 ---
 
@@ -205,22 +206,5 @@ This project is developed for educational and hackathon purposes.
 
 
 
-
-
-
-🇮🇳 Aadhaar Behaviour Intelligence Platform
-AI-Powered National Identity Analytics System
-<p align="center"> <img src="https://img.shields.io/badge/AI-Powered-blueviolet"/> <img src="https://img.shields.io/badge/India-UIDAI-orange"/> <img src="https://img.shields.io/badge/Status-Deployed-success"/> <img src="https://img.shields.io/badge/Tech-Streamlit%20%7C%20ML%20%7C%20Forecasting-blue"/> </p> <p align="center"> 🧠 Turning Aadhaar data into National Intelligence <br/> 📊 Detecting anomalies • Forecasting risk • Supporting governance </p>
-🌏 Vision
-
-To transform raw Aadhaar update logs into actionable national intelligence that enables proactive governance, infrastructure planning, and improved citizen experience.
-
-India’s digital identity system is the largest in the world. Monitoring it using simple reports is not enough.
-
-This project builds an AI-powered decision support platform for UIDAI.
-
-🎯 Problem Statement
-
-Unlock societal trends in Aadhaar enrolment and updates by identifying meaningful patterns, anomalies, and predictive indicators to support informed decision-making and system improvements.
 
 
