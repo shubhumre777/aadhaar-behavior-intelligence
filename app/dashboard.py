@@ -211,7 +211,7 @@ else:
 
         horizon = st.slider("Select prediction horizon (months)", 1, 12, 3)
 
-        if st.button("<..> Generate AI Forecast <..>"):
+        if st.button(" Generate AI Forecast "):
 
             with st.spinner("AI is analyzing past trends and predicting future risk..."):
 
