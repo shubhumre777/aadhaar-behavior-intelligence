@@ -61,14 +61,14 @@ st.markdown('<div class="subtitle">AI-powered national biometric behavior monito
 if st.session_state.mode == "intro":
     st.markdown("""
     <div class="card">
-    <h2>📌 About</h2>
+    <h2>-- About</h2>
     This platform detects abnormal Aadhaar biometric behavior, high-risk regions, system stress & migration signals using AI + ML.
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown("""
     <div class="card">
-    <h2>🎯 Problem Statement</h2>
+    <h2>-- Problem Statement</h2>
     Identify meaningful patterns, anomalies & predictive indicators in Aadhaar updates to support decision-making & system improvement.
     </div>
     """, unsafe_allow_html=True)
@@ -91,7 +91,7 @@ else:
         st.rerun()
 
     #  Summary Metrics 
-    st.markdown("## 📊 National Summary")
+    st.markdown("## 📊 Whole Summary")
     c1,c2,c3,c4 = st.columns(4)
     c1.markdown(f'<div class="metric-box">Districts<br>{len(risk_df)}</div>', unsafe_allow_html=True)
     c2.markdown(f'<div class="metric-box">Anomalies<br>{len(anomalies_df)}</div>', unsafe_allow_html=True)
@@ -211,7 +211,7 @@ else:
 
         horizon = st.slider("Select prediction horizon (months)", 1, 12, 3)
 
-        if st.button("🚀 Generate AI Forecast"):
+        if st.button("<..> Generate AI Forecast <..>"):
 
             with st.spinner("AI is analyzing past trends and predicting future risk..."):
 
