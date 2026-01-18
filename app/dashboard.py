@@ -75,7 +75,7 @@ if st.session_state.mode == "intro":
 
     st.markdown("""
     <div class="card">
-    <h2>⚙ Architecture</h2>
+    <h2>-- Architecture</h2>
     Data → Cleaning → Feature Engineering → ML (Isolation Forest) → Risk Engine → Geo Intelligence → Decision Support
     </div>
     """, unsafe_allow_html=True)
