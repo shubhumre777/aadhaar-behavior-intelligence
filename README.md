@@ -159,7 +159,7 @@ The system visualizes biometric risk using a point-based geo map:
 The project is deployed using **Streamlit Cloud**.
 
 Live App:  
-👉 https://aadhaar-behavior-intelligence-naw9fuv9epvq8uwcv4ybhn.streamlit.app/
+👉 https://aadhaar-behavior-intelligence-z6cfp99ncoissjukvbr4mh.streamlit.app/
 
 ---
 
@@ -201,6 +201,7 @@ It bridges **raw public infrastructure data** with **AI-driven decision support 
 ## 📜 License
 
 This project is developed for educational and hackathon purposes.
+
 
 
 
