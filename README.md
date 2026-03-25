@@ -8,7 +8,8 @@ Live Demo:
 🇮🇳 Aadhaar Behaviour Intelligence Platform
 AI-Powered National Identity Analytics System
 <p align="center"> <img src="https://img.shields.io/badge/AI-Powered-blueviolet"/> <img src="https://img.shields.io/badge/India-UIDAI-orange"/> <img src="https://img.shields.io/badge/Status-Deployed-success"/> <img src="https://img.shields.io/badge/Tech-Streamlit%20%7C%20ML%20%7C%20Forecasting-blue"/> </p> <p align="center"> 🧠 Turning Aadhaar data into National Intelligence <br/> 📊 Detecting anomalies • Forecasting risk • Supporting governance </p>
-🌏 Vision
+
+## --Vision
 
 To transform raw Aadhaar update logs into actionable national intelligence that enables proactive governance, infrastructure planning, and improved citizen experience.
 
@@ -16,14 +17,14 @@ India’s digital identity system is the largest in the world. Monitoring it usi
 
 This project builds an AI-powered decision support platform for UIDAI.
 
-🎯 Problem Statement
+## --Problem Statement
 
 Unlock societal trends in Aadhaar enrolment and updates by identifying meaningful patterns, anomalies, and predictive indicators to support informed decision-making and system improvements.
 
 
 ---
 
-## 🎯 Project Objective
+## --Project Objective
 
 To design a data-driven intelligence system that:
 
@@ -34,7 +35,7 @@ To design a data-driven intelligence system that:
 
 ---
 
-## 📊 Datasets Used
+## -- Datasets Used
 
 Two official UIDAI datasets:
 
@@ -43,7 +44,7 @@ Two official UIDAI datasets:
 
 Each dataset was provided in multiple CSV chunks and merged during preprocessing.
 
-## Key Columns Used:
+## --Key Columns Used:
 
 - `date`
 - `state`
@@ -56,7 +57,7 @@ Each dataset was provided in multiple CSV chunks and merged during preprocessing
 
 ---
 
-## 🛠️ Data Pipeline
+##  --Data Pipeline
 
 1. Merge multiple CSV files  
 2. Clean invalid dates & missing values  
@@ -68,7 +69,7 @@ Each dataset was provided in multiple CSV chunks and merged during preprocessing
 
 ---
 
-## 🧪 Feature Engineering (Predictive Indicators)
+## --Feature Engineering (Predictive Indicators)
 
 | Feature | Description |
 |--------|-------------|
@@ -82,7 +83,7 @@ These features enable early detection of abnormal behavioural patterns.
 
 ---
 
-## 🤖 Machine Learning Model
+## --Machine Learning Model
 
 **Isolation Forest** (unsupervised anomaly detection)
 
@@ -100,7 +101,7 @@ Output:
 
 ---
 
-## 🔍 Key Insights
+## --Key Insights
 
 - Major nationwide biometric anomaly spike detected in **January 2025**
 - ~800 districts showed abnormal behaviour in the same month
@@ -109,7 +110,7 @@ Output:
 
 ---
 
-## 🗺️ Geographic Intelligence
+## --Geographic Intelligence
 
 The system visualizes biometric risk using a point-based geo map:
 
@@ -119,7 +120,7 @@ The system visualizes biometric risk using a point-based geo map:
 
 ---
 
-## 🧭 Decision Support Framework
+## --Decision Support Framework
 
 | Risk Level | Interpretation | Recommended Action |
 |-----------|----------------|--------------------|
@@ -129,7 +130,7 @@ The system visualizes biometric risk using a point-based geo map:
 
 ---
 
-## 🖥️ Dashboard Features
+## --Dashboard Features
 
 - Monthly trend visualization  
 - Anomaly detection chart  
@@ -141,7 +142,7 @@ The system visualizes biometric risk using a point-based geo map:
 
 ---
 
-## 🧰 Tech Stack
+## --Tech Stack
 
 - Python  
 - Pandas, NumPy  
@@ -154,7 +155,7 @@ The system visualizes biometric risk using a point-based geo map:
 
 ---
 
-## 🚀 Deployment
+## --Deployment
 
 The project is deployed using **Streamlit Cloud**.
 
@@ -185,7 +186,7 @@ aadhaar-behavior-intelligence/
 ├── README.md
 └── .gitignore
 
-## 📌 Conclusion
+## --Conclusion
 
 This project demonstrates how large-scale Aadhaar update data can be transformed into:
 
@@ -198,7 +199,7 @@ It bridges **raw public infrastructure data** with **AI-driven decision support 
 
 ---
 
-## 📜 License
+## --License
 
 This project is developed for educational and hackathon purposes.
 
