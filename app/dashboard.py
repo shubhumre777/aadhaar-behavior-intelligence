@@ -227,7 +227,7 @@ else:
                 model_bio = Prophet()
                 model_bio.fit(bio_df)
 
-                future = model_bio.make_future_dataframe(periods=horizon, freq="M")
+                future = model_bio.make_future_dataframe(periods=horizon, freq="MS")
                 forecast_bio = model_bio.predict(future)
 
                 # Demographic forecast 
