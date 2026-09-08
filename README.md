@@ -166,25 +166,8 @@ Live App:
 
 📁 Project Structure
 
-aadhaar-behavior-intelligence/
-│
-├── app/
-│ └── dashboard.py
-│
-├── notebooks/
-│ └── data_processing_and_modeling.ipynb
-│
-├── outputs/
-│ ├── monthly_behavior.csv
-│ ├── anomalies.csv
-│ ├── district_risk.csv
-│ ├── state_risk.csv
-│ ├── state_coordinates.csv
-│ └── world.geojson
-│
-├── requirements.txt
-├── README.md
-└── .gitignore
+<img src="images/your-image-name.png" alt="Alternative Text" width="400">
+
 
 ## --Conclusion
 
