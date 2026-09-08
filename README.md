@@ -166,7 +166,7 @@ Live App:
 
 📁 Project Structure
 
-<img src="https://github.com/shubhumre777/aadhaar-behavior-intelligence/blob/main/project%20structure.png?raw=true" alt="Project Structure" width="600">
+<img src="https://github.com/shubhumre777/aadhaar-behavior-intelligence/blob/main/project%20structure.png?raw=true" alt="Project Structure" width="800">
 
 
 ## --Conclusion
