@@ -169,6 +169,13 @@ Live App:
 <img src="https://github.com/shubhumre777/aadhaar-behavior-intelligence/blob/main/project%20structure.png?raw=true" alt="Project Structure" width="800">
 
 
+## --Model Validation & Interpretation Notes
+
+- Isolation Forest is used for **unsupervised anomaly detection**. The repository does not currently report precision, recall, F1, ROC-AUC, or validation against independently labelled anomalies. Treat anomaly flags as exploratory signals, not confirmed fraud or wrongdoing.
+- The LOW / MEDIUM / HIGH categories are relative dashboard bands derived from the 60th and 85th percentiles of the current risk-score distribution. They are not externally validated risk thresholds.
+- Prophet is implemented as an exploratory forecasting view for biometric totals, demographic totals, and their ratio. The repository does not currently document a held-out backtest or MAE / RMSE / MAPE, so forecast accuracy has not been established.
+- The dashboard reads prepared CSV files from `outputs/`. The full raw-data-to-output pipeline and raw source files are not packaged as a one-click reproducible workflow in this repository.
+
 ## --Conclusion
 
 This project demonstrates how large-scale Aadhaar update data can be transformed into:
